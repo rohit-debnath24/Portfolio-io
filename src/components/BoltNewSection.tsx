@@ -34,17 +34,17 @@ export default function BoltNewSection() {
               <br />
               BUILDING
               <br />
-              <span className="text-[#00ff88]">BOLT.NEW</span>
+              <span className="text-[#00ff88]">ALGOSLICE</span>
             </h2>
           </div>
 
-          {/* Tbilisi events notice or active indicator */}
+          {/* Sectors and indicators */}
           <div className="pt-4 flex items-center gap-3 relative z-10">
             <span className="font-mono text-[9px] text-[#00ff88] px-2 py-1 border border-[#00ff88]/20 uppercase">
               SECTOR_5
             </span>
             <span className="font-mono text-[9px] text-[#a0b0a8] uppercase">
-              // CASE_STUDY_01 ACTIVE
+              // PROJECT_SLOT_01 ACTIVE
             </span>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function BoltNewSection() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-16 h-12 bg-[#00ff88] hover:bg-white text-black flex items-center justify-center rounded-2xl shadow-[0_0_20px_rgba(0,255,136,0.3)] transition-colors duration-300"
-                aria-label="Play case study video"
+                aria-label="Play project overview video"
               >
                 <Play className="w-6 h-6 fill-current text-black ml-0.5" />
               </motion.button>
@@ -71,10 +71,10 @@ export default function BoltNewSection() {
             <div className="relative z-10 flex flex-col justify-between h-full w-1/2">
               <div className="flex flex-col gap-1">
                 <span className="font-display font-black text-[9px] tracking-[0.25em] text-[#a0b0a8] uppercase">
-                  EVIL MARTIANS
+                  ALGORAND SYSTEM
                 </span>
                 <span className="font-display font-black text-xl tracking-tight text-white uppercase">
-                  bolt.new
+                  AlgoSlice
                 </span>
               </div>
               <div className="w-16 h-0.5 bg-[#00ff88] opacity-50" />
@@ -100,10 +100,10 @@ export default function BoltNewSection() {
               {/* Subtext description at player bottom right */}
               <div className="text-right z-10">
                 <span className="font-mono text-xs font-bold text-white block">
-                  Albert Pai
+                  Rohit Debnath
                 </span>
                 <span className="font-mono text-[9px] text-[#a0b0a8] uppercase">
-                  Co-Founder and CTO
+                  SDE Intern & Creator
                 </span>
               </div>
             </div>
@@ -118,17 +118,17 @@ export default function BoltNewSection() {
             {/* Logo text left */}
             <div className="md:col-span-3 flex items-center gap-1.5">
               <span className="font-display font-black text-lg text-[#00ff88] tracking-tighter">
-                bolt<span className="text-white">.new</span>
+                Algo<span className="text-white">Slice</span>
               </span>
             </div>
 
             {/* Middle Description */}
             <div className="md:col-span-6 text-left">
               <span className="block font-mono text-[9px] uppercase tracking-wider text-[#00ff88] mb-0.5">
-                $113M TOTAL FUNDING
+                DIVERSION 2026 HACKATHON WINNER
               </span>
               <p className="text-[11px] font-mono text-[#a0b0a8] leading-relaxed">
-                With Evil Martians, bolt.new scaled to 3M+ MAU and grew ARR to $40M in 5 months. <span className="text-white px-1 border border-white/10 text-[9px]">AI</span>
+                GPU resource sharing prototype on Algorand that lets developers utilize shared GPU computing networks without expensive hardware.
               </p>
             </div>
 
@@ -136,10 +136,12 @@ export default function BoltNewSection() {
             <div className="md:col-span-3 text-right">
               <Magnetic range={30} strength={0.3}>
                 <a
-                  href="#contact"
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider text-[#00ff88] hover:text-white transition-colors duration-300"
                 >
-                  [READ CASE STUDY]
+                  [VIEW SOURCE]
                   <ArrowUpRight className="w-3 h-3" />
                 </a>
               </Magnetic>
