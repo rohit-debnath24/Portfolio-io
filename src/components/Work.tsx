@@ -14,8 +14,8 @@ const projects = [
     tags: ['Next.js 14', 'TypeScript', 'Stripe API', 'PostgreSQL', 'Tailwind CSS'],
     liveUrl: '#',
     repoUrl: '#',
-    glowColor: 'rgba(0, 255, 136, 0.12)',
-    iconColor: 'text-[#00ff88]'
+    glowColor: 'rgba(255, 59, 48, 0.12)',
+    iconColor: 'text-[#ff3b30]'
   },
   {
     id: 2,
@@ -24,8 +24,8 @@ const projects = [
     tags: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Framer Motion'],
     liveUrl: '#',
     repoUrl: '#',
-    glowColor: 'rgba(59, 130, 246, 0.12)',
-    iconColor: 'text-blue-400'
+    glowColor: 'rgba(255, 159, 10, 0.12)',
+    iconColor: 'text-amber-500'
   },
   {
     id: 3,
@@ -34,8 +34,8 @@ const projects = [
     tags: ['Storybook', 'TypeScript', 'Tailwind', 'Rollup'],
     liveUrl: '#',
     repoUrl: '#',
-    glowColor: 'rgba(168, 85, 247, 0.12)',
-    iconColor: 'text-purple-400'
+    glowColor: 'rgba(245, 209, 234, 0.12)',
+    iconColor: 'text-[#f5d1ea]'
   },
   {
     id: 4,
@@ -44,8 +44,8 @@ const projects = [
     tags: ['Next.js', 'D3.js', 'Redis', 'Tailwind CSS', 'TypeScript'],
     liveUrl: '#',
     repoUrl: '#',
-    glowColor: 'rgba(245, 158, 11, 0.12)',
-    iconColor: 'text-amber-400'
+    glowColor: 'rgba(255, 59, 48, 0.12)',
+    iconColor: 'text-[#ff3b30]'
   },
 ]
 
@@ -63,11 +63,9 @@ interface Project {
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null)
 
-  // Spotlight Mouse Values
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
-  // Tilt Mouse Values
   const tiltX = useMotionValue(0)
   const tiltY = useMotionValue(0)
 
@@ -79,13 +77,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     if (!cardRef.current) return
     const rect = cardRef.current.getBoundingClientRect()
     
-    // Relative coordinates for spotlight
     const relativeX = e.clientX - rect.left
     const relativeY = e.clientY - rect.top
     mouseX.set(relativeX)
     mouseY.set(relativeY)
 
-    // Percentage coordinates for 3D tilt (-0.5 to 0.5)
     const pctX = (e.clientX - rect.left) / rect.width - 0.5
     const pctY = (e.clientY - rect.top) / rect.height - 0.5
     tiltX.set(pctX)
@@ -126,13 +122,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
       <div style={{ transform: 'translateZ(30px)' }}>
         {/* Visual Showcase Box */}
-        <div className="w-full h-48 rounded-xl bg-white/[0.01] border border-white/5 flex items-center justify-center mb-8 relative overflow-hidden group-hover:border-[#00ff88]/20 transition-colors duration-300">
+        <div className="w-full h-48 rounded-xl bg-white/[0.01] border border-white/5 flex items-center justify-center mb-8 relative overflow-hidden group-hover:border-[#ff3b30]/20 transition-colors duration-300">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.01)_0%,transparent_70%)]" />
           <div className="relative flex flex-col items-center gap-2">
             <span className={`font-display text-3xl font-bold uppercase tracking-widest opacity-20 group-hover:opacity-60 transition-all duration-300 ${project.iconColor} group-hover:scale-105`}>
               {project.title.split(' ')[0]}
             </span>
-            <span className="text-[9px] font-mono tracking-widest text-[#8f94a6]/30 uppercase">
+            <span className="text-[9px] font-mono tracking-widest text-[#c0b0b8]/30 uppercase">
               // PROJECT ENGINE
             </span>
           </div>
@@ -141,17 +137,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag) => (
-            <span key={tag} className="px-2.5 py-1 text-[10px] uppercase font-mono tracking-wider bg-white/[0.02] border border-white/5 text-[#8f94a6] rounded-full">
+            <span key={tag} className="px-2.5 py-1 text-[10px] uppercase font-mono tracking-wider bg-white/[0.02] border border-white/5 text-[#c0b0b8] rounded-full">
               {tag}
             </span>
           ))}
         </div>
 
-        <h3 className="text-2xl font-display font-bold text-white mb-3 flex items-center justify-between group-hover:text-[#00ff88] transition-colors duration-300">
+        <h3 className="text-2xl font-display font-bold text-white mb-3 flex items-center justify-between group-hover:text-[#ff3b30] transition-colors duration-300">
           {project.title}
         </h3>
         
-        <p className="text-sm text-[#8f94a6] font-light leading-relaxed mb-8">
+        <p className="text-sm text-[#c0b0b8] font-light leading-relaxed mb-8">
           {project.description}
         </p>
       </div>
@@ -161,19 +157,19 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <Magnetic range={40} strength={0.4}>
           <a
             href={project.liveUrl}
-            className="flex items-center gap-2 text-sm font-semibold text-white hover:text-[#00ff88] transition-colors duration-300 group/link py-2 px-1"
+            className="flex items-center gap-2 text-sm font-mono tracking-wide uppercase text-white hover:text-[#ff3b30] transition-colors duration-300 group/link py-2 px-1"
           >
             Live Demo
-            <ArrowUpRight className="w-4 h-4 text-[#00ff88] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-4 h-4 text-[#ff3b30] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
           </a>
         </Magnetic>
         <Magnetic range={40} strength={0.4}>
           <a
             href={project.repoUrl}
-            className="flex items-center gap-2 text-sm font-medium text-[#8f94a6] hover:text-white transition-colors duration-300 py-2 px-1"
+            className="flex items-center gap-2 text-sm font-mono tracking-wide uppercase text-[#c0b0b8] hover:text-white transition-colors duration-300 py-2 px-1"
           >
             <Github className="w-4 h-4" />
-            Source Code
+            Source
           </a>
         </Magnetic>
       </div>
@@ -188,11 +184,11 @@ export default function Work() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-[#00ff88] font-mono text-xs uppercase tracking-widest block mb-4">// Selected Works</span>
+          <span className="text-[#ff3b30] font-mono text-xs uppercase tracking-widest block mb-4">// Selected Works</span>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
             <AnimatedText text="Featured Projects" />
           </h2>
-          <p className="text-lg text-[#8f94a6] font-light">
+          <p className="text-lg text-[#c0b0b8] font-light">
             A handpicked curation of digital applications showcasing code quality, UX motion, and system layout.
           </p>
         </div>
@@ -216,10 +212,10 @@ export default function Work() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-medium rounded-full transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-mono tracking-wide uppercase rounded-full transition-all duration-300 hover:scale-105"
             >
               See All Repositories on GitHub
-              <ExternalLink className="w-4 h-4 text-[#00ff88]" />
+              <ExternalLink className="w-4 h-4 text-[#ff3b30]" />
             </a>
           </Magnetic>
         </motion.div>

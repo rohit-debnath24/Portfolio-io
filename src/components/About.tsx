@@ -47,11 +47,11 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-6"
           >
-            <span className="text-[#00ff88] font-mono text-xs uppercase tracking-widest block mb-4">// Who I Am</span>
+            <span className="text-[#ff3b30] font-mono text-xs uppercase tracking-widest block mb-4">// Who I Am</span>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8">
               Fusing Code with Digital Design
             </h2>
-            <div className="space-y-6 text-[#8f94a6] font-light leading-relaxed">
+            <div className="space-y-6 text-[#c0b0b8] font-light leading-relaxed">
               <p>
                 I am a multidisciplinary engineer specializing in building high-end interfaces and digital products. 
                 My focus lies at the intersection of pixel-perfect design systems, creative coding, and modern web application stacks.
@@ -76,12 +76,12 @@ export default function About() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl flex flex-col justify-between"
+                  className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl flex flex-col justify-between"
                 >
-                  <span className="font-display text-3xl sm:text-4xl font-bold text-[#00ff88] block mb-2">
+                  <span className="font-display text-3xl sm:text-4xl font-bold text-[#ff3b30] block mb-2">
                     {stat.value}
                   </span>
-                  <span className="text-xs uppercase tracking-wider text-[#8f94a6]">
+                  <span className="text-xs uppercase tracking-wider text-[#c0b0b8]">
                     {stat.label}
                   </span>
                 </motion.div>
@@ -102,14 +102,14 @@ export default function About() {
                   transition={{ delay: i * 0.1, duration: 0.6 }}
                   className="glass-card rounded-2xl p-8 flex gap-6"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center text-[#00ff88]">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-center text-[#ff3b30]">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="font-display text-xl font-bold text-white mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-[#8f94a6] leading-relaxed font-light">
+                    <p className="text-sm text-[#c0b0b8] leading-relaxed font-light">
                       {feature.desc}
                     </p>
                   </div>

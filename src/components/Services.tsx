@@ -91,43 +91,43 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
       }}
       className="glass-card rounded-2xl p-8 lg:p-12 flex flex-col justify-between group min-h-[420px] relative overflow-hidden"
     >
-      {/* Spotlight overlay */}
+      {/* Spotlight overlay (crimson glow) */}
       <motion.div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
         style={{
           background: useTransform(
             [mouseX, mouseY],
-            ([xVal, yVal]) => `radial-gradient(350px circle at ${xVal}px ${yVal}px, rgba(0, 255, 136, 0.08), transparent 80%)`
+            ([xVal, yVal]) => `radial-gradient(350px circle at ${xVal}px ${yVal}px, rgba(255, 59, 48, 0.08), transparent 80%)`
           ),
         }}
       />
 
       <div style={{ transform: 'translateZ(20px)' }}>
         <div className="flex items-start justify-between mb-8">
-          <div className="w-14 h-14 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center text-[#00ff88] group-hover:scale-110 transition-transform duration-300">
+          <div className="w-14 h-14 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center text-[#ff3b30] group-hover:scale-110 transition-transform duration-300">
             <Icon className="w-7 h-7" />
           </div>
-          <span className="font-mono text-sm text-[#8f94a6]/20">0{index + 1}</span>
+          <span className="font-mono text-sm text-[#c0b0b8]/20">0{index + 1}</span>
         </div>
         
         <h3 className="font-display text-2xl font-bold text-white mb-4">
           {service.title}
         </h3>
         
-        <p className="text-[#8f94a6] font-light leading-relaxed mb-8">
+        <p className="text-[#c0b0b8] font-light leading-relaxed mb-8">
           {service.desc}
         </p>
       </div>
 
       <div style={{ transform: 'translateZ(30px)' }}>
-        <h4 className="text-[9px] uppercase tracking-wider text-white/35 mb-3 font-semibold">
+        <h4 className="text-[9px] font-mono uppercase tracking-wider text-white/35 mb-3 font-semibold">
           // Core Technologies
         </h4>
         <div className="flex flex-wrap gap-2">
           {service.skills.map((skill) => (
             <span
               key={skill}
-              className="px-3 py-1.5 rounded-full bg-white/[0.01] border border-white/5 text-xs text-[#8f94a6] group-hover:border-[#00ff88]/20 group-hover:text-white transition-all duration-300"
+              className="px-3 py-1.5 rounded-full bg-white/[0.01] border border-white/5 text-xs text-[#c0b0b8] group-hover:border-[#ff3b30]/20 group-hover:text-white transition-all duration-300"
             >
               {skill}
             </span>
@@ -145,11 +145,11 @@ export default function Services() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-[#00ff88] font-mono text-xs uppercase tracking-widest block mb-4">// Capabilities</span>
+          <span className="text-[#ff3b30] font-mono text-xs uppercase tracking-widest block mb-4">// Capabilities</span>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
             <AnimatedText text="Services & Expertise" />
           </h2>
-          <p className="text-lg text-[#8f94a6] font-light">
+          <p className="text-lg text-[#c0b0b8] font-light">
             Bringing technical precision and creative direction together to build exceptional products for the web.
           </p>
         </div>
