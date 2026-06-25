@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#18000f',
+  themeColor: '#040806',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -66,7 +66,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#18000f] text-[#fffbf4] selection:bg-[#ff3b30] selection:text-white antialiased relative">
+      <body className="min-h-screen flex flex-col text-[#f4fff8] selection:bg-[#00ff88] selection:text-black antialiased relative">
         <GridOverlay />
         <CustomCursor />
         {children}
