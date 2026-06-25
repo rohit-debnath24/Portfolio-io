@@ -1,0 +1,9 @@
+{
+  "name": "Developer Portfolio",
+  "short_name": "Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040508",
+  "theme_color": "#040508",
+  "icons": []
+}

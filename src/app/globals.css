@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --bg-dark: #040508;
+    --bg-card: #0c0e14;
+    --accent: #00ff88;
+    --accent-glow: rgba(0, 255, 136, 0.15);
+    --border-color: #171a24;
+    --text-muted: #8f94a6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    font-family: var(--font-inter);
+    antialiased: true;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: #000000;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full;
+  }
+
+  .section-padding {
+    @apply py-24 sm:py-32 lg:py-40;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  .border-custom {
+    border-color: var(--border-color);
+  }
+
+  .glass-card {
+    background: rgba(12, 14, 20, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card:hover {
+    background: rgba(16, 19, 28, 0.8);
+    border-color: rgba(0, 255, 136, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 136, 0.05);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-white via-white to-gray-400 bg-clip-text text-transparent;
+  }
+
+  .nav-link-anim {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-link-anim::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link-anim:hover::after {
+    width: 100%;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #171a24;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #252a3a;
+}
+
+/* Hide default cursor on desktop devices with fine pointer support */
+@media (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
