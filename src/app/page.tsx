@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Search, Github, Linkedin, Youtube, Twitter } from 'lucide-react'
+import { DrawCircleText } from '@/components/DrawCircleText'
 import MartianConsole from '@/components/MartianConsole'
 import BoltNewSection from '@/components/BoltNewSection'
 import PostCSSSection from '@/components/PostCSSSection'
@@ -132,6 +133,7 @@ export default function Home() {
 
       {/* 3. Center Main Workspace Content Area */}
       <main className="min-h-screen lg:pl-64 xl:pr-24 p-6 sm:p-12 relative z-10 pt-24 lg:pt-12 flex flex-col gap-12 max-w-7xl mx-auto w-full overflow-y-auto">
+        <DrawCircleText />
         <MartianConsole />
         <BoltNewSection />
         <PostCSSSection />
