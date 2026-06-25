@@ -17,9 +17,9 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'Developer | Creative Full-Stack Engineer & Designer',
-  description: 'AI-powered, high-performance portfolio showcasing immersive digital products, strategy-led UI/UX designs, and clean custom code.',
-  keywords: ['developer', 'designer', 'portfolio', 'full-stack', 'React', 'Next.js', 'TypeScript', 'Creative Coding', 'WebGL'],
+  title: 'Martian Developer | Creative Full-Stack Engineer & Designer',
+  description: 'Product development and creative frontend engineering showcasing interactive retro-futuristic interfaces and custom systems.',
+  keywords: ['developer', 'designer', 'portfolio', 'full-stack', 'React', 'Next.js', 'TypeScript', 'Evil Martians', 'Creative Coding', 'WebGL'],
   authors: [{ name: 'Your Name' }],
   creator: 'Your Name',
   publisher: 'Your Name',
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://yourdomain.com',
-    siteName: 'Developer Portfolio',
-    title: 'Developer | Creative Full-Stack Engineer & Designer',
+    siteName: 'Martian Portfolio',
+    title: 'Martian Developer | Creative Full-Stack Engineer & Designer',
     description: 'Immersive digital products, strategy-led UI/UX designs, and clean custom code.',
     images: [
       {
@@ -42,15 +42,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Developer | Creative Full-Stack Engineer & Designer',
+    title: 'Martian Developer | Creative Full-Stack Engineer & Designer',
     description: 'Immersive digital products, strategy-led UI/UX designs, and clean custom code.',
     images: ['/og-image.jpg'],
   },
-  // Icons and manifest removed to prevent router resolution errors during development
 }
 
 export const viewport: Viewport = {
-  themeColor: '#040508',
+  themeColor: '#040806',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -67,7 +66,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#040508] text-white selection:bg-[#00ff88] selection:text-black antialiased relative">
+      <body className="min-h-screen flex flex-col text-[#f4fff8] selection:bg-[#00ff88] selection:text-black antialiased relative">
         <GridOverlay />
         <CustomCursor />
         {children}

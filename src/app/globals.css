@@ -6,27 +6,33 @@
   :root {
     --font-inter: 'Inter', system-ui, sans-serif;
     --font-display: 'Space Grotesk', system-ui, sans-serif;
-    --bg-dark: #040508;
-    --bg-card: #0c0e14;
+    --bg-dark: #040806;
+    --bg-card: #0c120f;
     --accent: #00ff88;
-    --accent-glow: rgba(0, 255, 136, 0.15);
-    --border-color: #171a24;
-    --text-muted: #8f94a6;
+    --accent-pink: #d1f5e2;
+    --accent-glow: rgba(0, 255, 136, 0.12);
+    --border-color: #16261f;
+    --text-muted: #a0b0a8;
   }
 
   html {
     scroll-behavior: smooth;
     background-color: var(--bg-dark);
-    color: #ffffff;
+    color: #f4fff8;
     overflow-x: hidden;
   }
 
   body {
     background-color: var(--bg-dark);
-    color: #ffffff;
+    color: #f4fff8;
     font-family: var(--font-inter);
     antialiased: true;
     overflow-x: hidden;
+    background-image: 
+      linear-gradient(rgba(0, 255, 136, 0.008) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 136, 0.008) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center;
   }
 
   ::selection {
@@ -45,7 +51,7 @@
   }
 
   .text-glow {
-    text-shadow: 0 0 20px var(--accent-glow);
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
   }
 
   .border-custom {
@@ -53,20 +59,20 @@
   }
 
   .glass-card {
-    background: rgba(12, 14, 20, 0.6);
+    background: rgba(12, 18, 15, 0.55);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border-color);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .glass-card:hover {
-    background: rgba(16, 19, 28, 0.8);
-    border-color: rgba(0, 255, 136, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 136, 0.05);
+    background: rgba(16, 24, 20, 0.75);
+    border-color: rgba(0, 255, 136, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 255, 136, 0.08);
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-white via-white to-gray-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-white via-[#d1f5e2] to-[#00ff88] bg-clip-text text-transparent;
   }
 
   .nav-link-anim {
@@ -100,12 +106,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #171a24;
+  background: #16261f;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #252a3a;
+  background: #233c31;
 }
 
 /* Hide default cursor on desktop devices with fine pointer support */
@@ -114,4 +120,57 @@
   .custom-cursor-active * {
     cursor: none !important;
   }
+}
+
+/* Custom Martian range sliders */
+input[type="range"].martian-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type="range"].martian-slider:focus {
+  outline: none;
+}
+
+input[type="range"].martian-slider::-webkit-slider-runnable-track {
+  background: rgba(255, 255, 255, 0.08);
+  height: 2px;
+}
+
+input[type="range"].martian-slider::-moz-range-track {
+  background: rgba(255, 255, 255, 0.08);
+  height: 2px;
+}
+
+input[type="range"].martian-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #00ff88;
+  height: 10px;
+  width: 10px;
+  margin-top: -4px; /* Centered on 2px track */
+  border-radius: 0px;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  transition: transform 0.1s ease;
+}
+
+input[type="range"].martian-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+input[type="range"].martian-slider::-moz-range-thumb {
+  background-color: #00ff88;
+  border: none;
+  height: 10px;
+  width: 10px;
+  border-radius: 0px;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  transition: transform 0.1s ease;
+}
+
+input[type="range"].martian-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
 }

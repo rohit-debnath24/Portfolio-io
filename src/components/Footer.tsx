@@ -10,9 +10,9 @@ export default function Footer() {
           {/* Logo & Copyright */}
           <div className="flex flex-col md:items-start items-center gap-2">
             <span className="font-display font-bold text-lg text-white">
-              CREATIVE<span className="text-[#00ff88]">.</span>
+              MARTIAN<span className="text-[#ff3b30]">.</span>
             </span>
-            <p className="text-xs text-[#8f94a6]/50">
+            <p className="text-xs text-[#c0b0b8]/50">
               &copy; {currentYear} Developer Portfolio. All rights reserved.
             </p>
           </div>
@@ -31,7 +31,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="w-10 h-10 bg-white/[0.02] border border-white/5 rounded-full flex items-center justify-center text-[#8f94a6] hover:bg-[#00ff88]/10 hover:text-[#00ff88] hover:border-[#00ff88]/20 transition-all duration-300 hover:scale-105"
+                className="w-10 h-10 bg-white/[0.02] border border-white/5 rounded-full flex items-center justify-center text-[#c0b0b8] hover:bg-[#ff3b30]/10 hover:text-[#ff3b30] hover:border-[#ff3b30]/20 transition-all duration-300 hover:scale-105"
               >
                 <social.icon className="w-4 h-4" />
               </a>
@@ -39,9 +39,9 @@ export default function Footer() {
           </div>
 
           {/* Heart Sig */}
-          <div className="flex items-center gap-1.5 text-xs text-[#8f94a6]/50">
+          <div className="flex items-center gap-1.5 text-xs text-[#c0b0b8]/50">
             <span>Crafted with</span>
-            <Heart className="w-3.5 h-3.5 text-[#00ff88] fill-[#00ff88]/20" />
+            <Heart className="w-3.5 h-3.5 text-[#ff3b30] fill-[#ff3b30]/20" />
             <span>and creative engineering</span>
           </div>
         </div>
