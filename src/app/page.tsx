@@ -1,7 +1,8 @@
 'use client'
 
-import React from 'react'
-import { Search, Github, Linkedin, Youtube, Twitter } from 'lucide-react'
+import React, { useState } from 'react'
+import { Search, Github, Linkedin, Youtube, Twitter, Menu, X } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { DrawCircleText } from '@/components/DrawCircleText'
 import MartianConsole from '@/components/MartianConsole'
 import BoltNewSection from '@/components/BoltNewSection'
@@ -21,6 +22,8 @@ const navLinks = [
 ]
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <>
       {/* 1. Left Sidebar (Fixed on Desktop) */}
@@ -129,13 +132,92 @@ export default function Home() {
             ROHIT
           </span>
         </div>
-        <a
-          href="mailto:Rohitkumardebnath02@gmail.com"
-          className="px-4 py-2 bg-[#00ff88] text-black font-mono text-[9px] font-bold uppercase tracking-wider rounded"
-        >
-          Hire Rohit
-        </a>
+        
+        <div className="flex items-center gap-3">
+          <a
+            href="mailto:Rohitkumardebnath02@gmail.com"
+            className="px-3.5 py-1.5 bg-[#00ff88] text-black font-mono text-[9px] font-bold uppercase tracking-wider rounded"
+          >
+            Hire Rohit
+          </a>
+          
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="p-2 border border-white/5 rounded text-[#a0b0a8] hover:text-[#00ff88] transition-colors"
+            aria-label="Toggle menu"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+        </div>
       </header>
+
+      {/* Mobile Menu Drawer Overlay */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'tween', ease: 'easeOut', duration: 0.3 }}
+            className="fixed inset-y-0 right-0 w-80 bg-[#040806]/98 backdrop-blur-xl border-l border-white/5 p-8 flex flex-col justify-between lg:hidden z-50 select-none shadow-2xl"
+          >
+            {/* Top Row */}
+            <div className="flex items-center justify-between">
+              <span className="font-display font-black text-xs tracking-wider text-[#00ff88] uppercase">
+                // SYSTEM MENU
+              </span>
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="p-2 border border-white/5 hover:border-[#00ff88]/20 rounded text-[#a0b0a8] hover:text-white transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Menu Links */}
+            <nav className="my-10">
+              <ul className="space-y-6">
+                {navLinks.map((link, idx) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="group flex items-baseline gap-3 py-1 font-display font-black text-2xl uppercase tracking-wider text-[#a0b0a8] hover:text-white transition-all duration-300"
+                    >
+                      <span className="font-mono text-xs text-[#00ff88]/40 group-hover:text-[#00ff88]">
+                        0{idx + 1}
+                      </span>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Bottom Section */}
+            <div className="space-y-6 border-t border-white/5 pt-6">
+              <a
+                href="mailto:Rohitkumardebnath02@gmail.com"
+                className="w-full py-3 bg-[#00ff88] text-black font-mono text-xs font-bold uppercase tracking-widest text-center block rounded transition-colors duration-300 shadow-[0_0_12px_rgba(0,255,136,0.15)]"
+              >
+                Hire Rohit
+              </a>
+              <div className="flex justify-center gap-6 text-[#a0b0a8]/40">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#00ff88] transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com/in/rohitkumardebnath02" target="_blank" rel="noopener noreferrer" className="hover:text-[#00ff88] transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#00ff88] transition-colors">
+                  <Twitter className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* 3. Center Main Workspace Content Area */}
       <main className="min-h-screen lg:pl-64 xl:pr-24 p-6 sm:p-12 relative z-10 pt-24 lg:pt-12 flex flex-col gap-12 max-w-7xl mx-auto w-full overflow-y-auto">
