@@ -2,53 +2,63 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Play, ShieldAlert } from 'lucide-react'
+import { X, Cpu } from 'lucide-react'
 
-// Arrays for Slider Value Mappings to match Evil Martians screenshots exactly
-const arrValues = ['≈$5K', '≈$50K', '≈$500K', '≈$5M', '≈$10M']
-const timeToValueValues = ['Instant', '1-3 days', '1-2 weeks', '1 month', '3+ months']
-const retentionValues = ['<15%', '15-30%', '30-45%', '45-60%', '>60%']
-const organicSignupValues = ['<20%', '20-40%', '40-50%', '50-70%', '>70%']
-const conversionValues = ['<1%', '1-3%', '3-6%', '6-10%', '>10%']
-const nrrValues = ['<100%', '100-110%', '110-120%', '120-130%', '>130%']
+// Arrays for Slider Value Mappings representing Developer-Project Fit parameters
+const scopeValues = ['Landing Page', 'SaaS Core', 'Platform App', 'Distributed System', 'Global Scale']
+const designValues = ['Clean Layout', 'Component Library', 'Premium Motion', 'Immersive WebGL', 'State-of-the-Art']
+const timelineValues = ['Rush (<2 wks)', 'Fast (3-4 wks)', 'Standard (1-2 mo)', 'Strategic (3-6 mo)', 'Flexible']
+const integrationValues = ['Static / Base', 'Simple CRUD', 'SaaS APIs & Pay', 'Third-Party Hub', 'Microservices / Web3']
+const realtimeValues = ['None (Static)', 'Async Fetch', 'WebSockets Sync', 'Multiplayer / CRDTs', 'Agentic AI Loops']
+const qualityValues = ['Manual check', 'Unit tests', 'CI/CD Pipelines', 'E2E Testing', 'Audit / Compliance']
 
 export default function MartianConsole() {
-  // Category State
-  const [category, setCategory] = useState('Infrastructure')
-  // Go to market motion State
-  const [gtm, setGtm] = useState('Product-led growth')
+  // Category State (Frontend / UI, Full-Stack / SaaS, AI / Web3)
+  const [category, setCategory] = useState('Full-Stack / SaaS')
+  // Project Complexity / Scale
+  const [complexity, setComplexity] = useState('Scale / Growth')
 
   // Slider Index States (0 to 4)
-  const [arr, setArr] = useState(0)
-  const [timeToValue, setTimeToValue] = useState(1)
-  const [retention, setRetention] = useState(0)
-  const [organic, setOrganic] = useState(3)
-  const [conversion, setConversion] = useState(1)
-  const [nrr, setNrr] = useState(0)
+  const [scope, setScope] = useState(1)
+  const [design, setDesign] = useState(2)
+  const [timeline, setTimeline] = useState(2)
+  const [integration, setIntegration] = useState(2)
+  const [realtime, setRealtime] = useState(1)
+  const [quality, setQuality] = useState(2)
 
   // Modal State
   const [showResult, setShowResult] = useState(false)
-  const [pmfScore, setPmfScore] = useState(0)
+  const [fitScore, setFitScore] = useState(0)
 
-  // Function to calculate PMF score based on selected sliders and categories
-  const calculatePMF = () => {
-    // Simple math formula to compute a score out of 100
-    let score = 30 // Base
-    score += (4 - arr) * 5 // Higher score for earlier ARR scaling (mock valuation check)
-    score += (4 - timeToValue) * 8 // Faster time to value is better
-    score += retention * 8 // Higher retention is better
-    score += organic * 6 // Higher organic signup is better
-    score += conversion * 5
-    score += nrr * 8 // Higher NRR is better
+  // Function to calculate developer-project alignment score
+  const calculateProjectFit = () => {
+    let score = 55 // Base alignment
 
-    if (category === 'Infrastructure' && gtm === 'Product-led growth') {
-      score += 15 // Perfect fit bonus
-    } else if (category === 'Dev Products' && gtm === 'Product-led growth') {
+    // Custom calculation logic:
+    // 1. High design fidelity and premium interactions align perfectly with our frontend/motion skills
+    score += design * 6
+    // 2. Interactive realtime sockets and microservices align with advanced backend skills
+    score += realtime * 5
+    score += integration * 3
+
+    // 3. Category matching
+    if (category === 'Full-Stack / SaaS' && complexity === 'Scale / Growth') {
+      score += 15 // Perfect core alignment
+    } else if (category === 'AI / Web3' && complexity === 'MVP Prototype') {
+      score += 12 // Great experimental fit
+    } else if (category === 'Frontend / UI' && design >= 2) {
       score += 10
     }
 
-    score = Math.min(Math.max(score, 10), 100)
-    setPmfScore(score)
+    // 4. Scope-timeline balance
+    if (scope >= 3 && timeline <= 1) {
+      score -= 15 // Penalty for massive projects on rush timelines (realistic consultation!)
+    } else if (scope <= 1 && timeline <= 1) {
+      score += 10 // Great fit for quick MVP delivery
+    }
+
+    score = Math.min(Math.max(score, 40), 100)
+    setFitScore(score)
     setShowResult(true)
   }
 
@@ -58,7 +68,7 @@ export default function MartianConsole() {
 
   const getCoordinates = (angleDegrees: number, valueIndex: number) => {
     const angleRad = (angleDegrees * Math.PI) / 180
-    // Radius goes from 50px (value index 0) to 150px (value index 4)
+    // Radius goes from 55px (value index 0) to 151px (value index 4)
     const radius = 55 + valueIndex * 24
     return {
       x: center.x + radius * Math.cos(angleRad),
@@ -66,15 +76,15 @@ export default function MartianConsole() {
     }
   }
 
-  // Node Positions
-  const nodeArr = getCoordinates(0, arr)
-  const nodeTTV = getCoordinates(60, timeToValue)
-  const nodeRet = getCoordinates(120, retention)
-  const nodeOrg = getCoordinates(180, organic)
-  const nodeConv = getCoordinates(240, conversion)
-  const nodeNrr = getCoordinates(300, nrr)
+  // Node Positions based on current slider choices
+  const nodeScope = getCoordinates(0, scope)
+  const nodeDesign = getCoordinates(60, design)
+  const nodeTimeline = getCoordinates(120, timeline)
+  const nodeIntegration = getCoordinates(180, integration)
+  const nodeRealtime = getCoordinates(240, realtime)
+  const nodeQuality = getCoordinates(300, quality)
 
-  const nodes = [nodeArr, nodeTTV, nodeRet, nodeOrg, nodeConv, nodeNrr]
+  const nodes = [nodeScope, nodeDesign, nodeTimeline, nodeIntegration, nodeRealtime, nodeQuality]
 
   return (
     <div className="relative w-full max-w-6xl mx-auto z-10">
@@ -93,9 +103,9 @@ export default function MartianConsole() {
             <h2 className="font-display font-black text-2xl tracking-widest text-[#f4fff8] uppercase leading-none">
               LET'S EXPLORE
               <br />
-              HOW YOU CAN
+              HOW WE CAN
               <br />
-              <span className="text-[#00ff88]">ACHIEVE PMF</span>
+              <span className="text-[#00ff88]">ACHIEVE FIT</span>
             </h2>
           </div>
 
@@ -156,10 +166,10 @@ export default function MartianConsole() {
           {/* Tbilisi events notice */}
           <div className="pt-4 flex items-center gap-3">
             <span className="font-mono text-[9px] text-[#00ff88] px-2 py-1 border border-[#00ff88]/20 uppercase">
-              SECTOR_4
+              RADAR_A
             </span>
             <span className="font-mono text-[9px] text-[#a0b0a8] uppercase">
-              // ACTIVE RADAR ACTIVE
+              // ALIGNMENT SCORE RADAR
             </span>
           </div>
         </div>
@@ -171,10 +181,10 @@ export default function MartianConsole() {
             {/* Category Selectors */}
             <div>
               <span className="block font-mono text-[10px] uppercase tracking-wider text-[#a0b0a8]/60 mb-2.5">
-                Category
+                Project Category
               </span>
               <div className="grid grid-cols-3 border border-white/5 overflow-hidden">
-                {['Dev Products', 'Infrastructure', 'Cybersecurity'].map((cat) => (
+                {['Frontend / UI', 'Full-Stack / SaaS', 'AI / Web3'].map((cat) => (
                   <button
                     key={cat}
                     type="button"
@@ -191,24 +201,24 @@ export default function MartianConsole() {
               </div>
             </div>
 
-            {/* Go-to-market motion Selectors */}
+            {/* Project Complexity Selectors */}
             <div>
               <span className="block font-mono text-[10px] uppercase tracking-wider text-[#a0b0a8]/60 mb-2.5">
-                Go to market motion
+                Target Project Phase
               </span>
               <div className="grid grid-cols-3 border border-white/5 overflow-hidden">
-                {['Product-led growth', 'Sales-assisted', 'Enterprise'].map((motionItem) => (
+                {['MVP Prototype', 'Scale / Growth', 'Enterprise System'].map((compItem) => (
                   <button
-                    key={motionItem}
+                    key={compItem}
                     type="button"
-                    onClick={() => setGtm(motionItem)}
+                    onClick={() => setComplexity(compItem)}
                     className={`py-2 px-3 text-[10px] font-mono uppercase tracking-wider text-center border-r border-white/5 last:border-r-0 transition-colors ${
-                      gtm === motionItem
+                      complexity === compItem
                         ? 'bg-[#00ff88] text-black font-bold'
                         : 'bg-transparent text-[#a0b0a8] hover:bg-white/[0.02]'
                     }`}
                   >
-                    {motionItem}
+                    {compItem}
                   </button>
                 ))}
               </div>
@@ -216,104 +226,104 @@ export default function MartianConsole() {
 
             {/* Range Sliders */}
             <div className="space-y-4 pt-2">
-              {/* ARR */}
+              {/* Scope */}
               <div>
                 <div className="flex justify-between text-[11px] font-mono uppercase text-[#a0b0a8] mb-1.5">
-                  <span>Annual recurring revenue</span>
-                  <span className="text-[#00ff88] font-bold">{arrValues[arr]}</span>
+                  <span>Project Scope & Size</span>
+                  <span className="text-[#00ff88] font-bold">{scopeValues[scope]}</span>
                 </div>
                 <input
                   type="range"
                   min="0"
                   max="4"
                   step="1"
-                  value={arr}
-                  onChange={(e) => setArr(parseInt(e.target.value))}
+                  value={scope}
+                  onChange={(e) => setScope(parseInt(e.target.value))}
                   className="martian-slider w-full py-1"
                 />
               </div>
 
-              {/* Time to value */}
+              {/* Design Fidelity */}
               <div>
                 <div className="flex justify-between text-[11px] font-mono uppercase text-[#a0b0a8] mb-1.5">
-                  <span>Time to first value</span>
-                  <span className="text-[#00ff88] font-bold">{timeToValueValues[timeToValue]}</span>
+                  <span>Design & Motion Fidelity</span>
+                  <span className="text-[#00ff88] font-bold">{designValues[design]}</span>
                 </div>
                 <input
                   type="range"
                   min="0"
                   max="4"
                   step="1"
-                  value={timeToValue}
-                  onChange={(e) => setTimeToValue(parseInt(e.target.value))}
+                  value={design}
+                  onChange={(e) => setDesign(parseInt(e.target.value))}
                   className="martian-slider w-full py-1"
                 />
               </div>
 
-              {/* Retention */}
+              {/* Timeline */}
               <div>
                 <div className="flex justify-between text-[11px] font-mono uppercase text-[#a0b0a8] mb-1.5">
-                  <span>Day 7 retention</span>
-                  <span className="text-[#00ff88] font-bold">{retentionValues[retention]}</span>
+                  <span>Target Delivery Timeline</span>
+                  <span className="text-[#00ff88] font-bold">{timelineValues[timeline]}</span>
                 </div>
                 <input
                   type="range"
                   min="0"
                   max="4"
                   step="1"
-                  value={retention}
-                  onChange={(e) => setRetention(parseInt(e.target.value))}
+                  value={timeline}
+                  onChange={(e) => setTimeline(parseInt(e.target.value))}
                   className="martian-slider w-full py-1"
                 />
               </div>
 
-              {/* Organic Signup */}
+              {/* API Integrations */}
               <div>
                 <div className="flex justify-between text-[11px] font-mono uppercase text-[#a0b0a8] mb-1.5">
-                  <span>Organic signup</span>
-                  <span className="text-[#00ff88] font-bold">{organicSignupValues[organic]}</span>
+                  <span>API & Integrations Depth</span>
+                  <span className="text-[#00ff88] font-bold">{integrationValues[integration]}</span>
                 </div>
                 <input
                   type="range"
                   min="0"
                   max="4"
                   step="1"
-                  value={organic}
-                  onChange={(e) => setOrganic(parseInt(e.target.value))}
+                  value={integration}
+                  onChange={(e) => setIntegration(parseInt(e.target.value))}
                   className="martian-slider w-full py-1"
                 />
               </div>
 
-              {/* Conversion */}
+              {/* Real-time */}
               <div>
                 <div className="flex justify-between text-[11px] font-mono uppercase text-[#a0b0a8] mb-1.5">
-                  <span>Free to paid conversion</span>
-                  <span className="text-[#00ff88] font-bold">{conversionValues[conversion]}</span>
+                  <span>Real-Time & Sync Needs</span>
+                  <span className="text-[#00ff88] font-bold">{realtimeValues[realtime]}</span>
                 </div>
                 <input
                   type="range"
                   min="0"
                   max="4"
                   step="1"
-                  value={conversion}
-                  onChange={(e) => setConversion(parseInt(e.target.value))}
+                  value={realtime}
+                  onChange={(e) => setRealtime(parseInt(e.target.value))}
                   className="martian-slider w-full py-1"
                 />
               </div>
 
-              {/* NRR */}
+              {/* Quality & Testing */}
               <div>
                 <div className="flex justify-between text-[11px] font-mono uppercase text-[#a0b0a8] mb-1.5">
-                  <span>Net revenue retention</span>
-                  <span className="text-[#00ff88] font-bold">{nrrValues[nrr]}</span>
+                  <span>Testing & Compliance Scope</span>
+                  <span className="text-[#00ff88] font-bold">{qualityValues[quality]}</span>
                 </div>
                 <input
                   type="range"
                   min="0"
                   max="4"
                   step="1"
-                  value={nrr}
-                  onChange={(e) => setNrr(parseInt(e.target.value))}
+                  value={quality}
+                  onChange={(e) => setQuality(parseInt(e.target.value))}
                   className="martian-slider w-full py-1"
                 />
               </div>
@@ -324,10 +334,10 @@ export default function MartianConsole() {
           {/* Calculate Button */}
           <div className="mt-8 pt-6 border-t border-white/5 text-center">
             <button
-              onClick={calculatePMF}
+              onClick={calculateProjectFit}
               className="px-6 py-2 border border-dashed border-[#00ff88]/40 text-[#00ff88] hover:text-black hover:bg-[#00ff88]/10 hover:border-[#00ff88]/65 text-xs font-mono uppercase tracking-widest transition-all rounded"
             >
-              [CALCULATE PMF]
+              [CALCULATE PROJECT FIT]
             </button>
           </div>
         </div>
@@ -360,11 +370,11 @@ export default function MartianConsole() {
 
               <div className="text-center">
                 <span className="font-mono text-[9px] text-[#00ff88] tracking-widest uppercase block mb-2">
-                  // READOUT METRICS COMPLETED
+                  // READOUT ALIGNMENT COMPLETED
                 </span>
                 
                 <h3 className="font-display font-black text-2xl text-white mb-6 uppercase">
-                  PMF VALIDATION SCORE
+                  DEVELOPER ALIGNMENT SCORE
                 </h3>
 
                 {/* Score Circle */}
@@ -388,12 +398,12 @@ export default function MartianConsole() {
                       fill="transparent"
                       strokeDasharray="339.29"
                       initial={{ strokeDashoffset: 339.29 }}
-                      animate={{ strokeDashoffset: 339.29 - (339.29 * pmfScore) / 100 }}
+                      animate={{ strokeDashoffset: 339.29 - (339.29 * fitScore) / 100 }}
                       transition={{ duration: 1.2, ease: 'easeOut' }}
                     />
                   </svg>
                   <span className="font-display text-4xl font-black text-white">
-                    {pmfScore}<span className="text-[#00ff88] text-sm font-light">%</span>
+                    {fitScore}<span className="text-[#00ff88] text-sm font-light">%</span>
                   </span>
                 </div>
 
@@ -402,12 +412,12 @@ export default function MartianConsole() {
                   <span className="font-mono text-[9px] text-[#00ff88] block mb-1">
                     STATUS ASSESSMENT:
                   </span>
-                  <p className="text-xs text-[#a0b0a8] leading-relaxed">
-                    {pmfScore > 75
-                      ? `STRONG PRODUCT-MARKET FIT POTENTIAL. Your ${category} category aligns excellently with a ${gtm} GTM model. Scalable infrastructure channels are recommended.`
-                      : pmfScore > 50
-                      ? 'MODERATE TRACTION. Core features are functioning, but optimizing organic retention or time-to-first-value yields are critical to secure reliable expansion.'
-                      : 'EARLY VALIDATION PHASE. Focus heavily on minimizing Time-to-First-Value metrics and boosting user retention channels before establishing marketing scales.'}
+                  <p className="text-xs text-[#a0b0a8] leading-relaxed font-mono">
+                    {fitScore > 80
+                      ? `STRONG FIT DETECTED. Your project category (${category}) and phase (${complexity}) perfectly align with my focus on building responsive full-stack apps, interactive motion systems, and custom integrations. Let's schedule a call!`
+                      : fitScore > 60
+                      ? `GOOD FEASIBILITY. The scope and timeline represent a solid build target. I recommend using standard component structures or custom Tailwind layers to optimize the delivery path.`
+                      : `HIGH COMPLEXITY / RUSH CHALLENGE. Delivering a large-scale integration on a short timeline is high risk. I recommend restructuring the MVP scope to fit key priority features first.`}
                   </p>
                 </div>
 
