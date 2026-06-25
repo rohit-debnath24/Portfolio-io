@@ -6,19 +6,19 @@ export default function ClientsSection() {
   return (
     <div className="relative w-full max-w-6xl mx-auto z-10 my-12 animate-fade-in">
       
-      {/* 1. More Happy Clients Section */}
+      {/* 1. Affiliations & Experience Section */}
       <div id="clients" className="w-full relative mb-12">
         
         {/* Section Header */}
         <div className="flex justify-between items-center mb-6 px-1 select-none">
           <span className="font-mono text-xs uppercase tracking-widest text-[#00ff88] font-bold">
-            MORE HAPPY CLIENTS
+            AFFILIATIONS & EXPERIENCE
           </span>
           <div className="flex items-center gap-4 text-xs font-mono">
             <button className="text-[#a0b0a8]/40 hover:text-[#00ff88] transition-colors">[&lt;]</button>
             <button className="text-[#a0b0a8]/40 hover:text-[#00ff88] transition-colors">[&gt;]</button>
-            <a href="#contact" className="text-[#00ff88] hover:text-white transition-colors">
-              [SEE ALL]
+            <a href="mailto:Rohitkumardebnath02@gmail.com" className="text-[#00ff88] hover:text-white transition-colors">
+              [CONTACT]
             </a>
           </div>
         </div>
@@ -26,7 +26,7 @@ export default function ClientsSection() {
         {/* 3-Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          {/* Card 1: LAGO */}
+          {/* Card 1: HIVE DYNAMICS */}
           <div className="border border-white/5 bg-[#0c120f]/30 p-6 flex flex-col justify-between min-h-[280px] relative group hover:border-[#00ff88]/20 transition-all duration-300">
             <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#00ff88]/40 group-hover:border-[#00ff88]" />
             <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#00ff88]/40 group-hover:border-[#00ff88]" />
@@ -35,18 +35,19 @@ export default function ClientsSection() {
 
             <div>
               <span className="font-mono text-[9px] text-[#00ff88] uppercase block mb-1">
-                $22M TOTAL FUNDING
+                March 2026 - PRESENT
               </span>
               
               {/* Logo Box */}
               <div className="w-full h-24 flex items-center justify-center bg-black/10 border border-white/[0.02] rounded-lg mb-6 select-none">
                 <div className="flex items-center gap-3">
-                  {/* Curved concentric arches Lago symbol */}
+                  {/* Hexagonal Hive Dynamics symbol */}
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-[#00ff88]">
-                    <path d="M6 26c0-11 9-20 20-20M12 26c0-7.7 6.3-14 14-14M18 26c0-4.4 3.6-8 8-8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                    <path d="M16 2l12 7v14l-12 7-12-7V9l12-7z" stroke="currentColor" strokeWidth="2" />
+                    <path d="M16 8l7 4v8l-7 4-7-4v-8l7-4z" stroke="currentColor" strokeWidth="1.2" strokeDasharray="2 2" />
                   </svg>
-                  <span className="font-display font-black text-2xl text-white tracking-tight">
-                    Lago
+                  <span className="font-display font-black text-lg text-white tracking-tight uppercase">
+                    Hive Dynamics
                   </span>
                 </div>
               </div>
@@ -54,13 +55,13 @@ export default function ClientsSection() {
 
             <div>
               <p className="text-[11px] font-mono text-[#a0b0a8] leading-relaxed mb-2">
-                Scaled engineering team to ramp up feature delivery.
+                SDE Intern. Architecting containerized video analytics tracking, Person ReID, and VLM workflow decoders.
               </p>
-              <span className="text-[9px] font-mono text-[#00ff88]/50 uppercase tracking-widest block">// DEVTOOL</span>
+              <span className="text-[9px] font-mono text-[#00ff88]/50 uppercase tracking-widest block">// ML & COMPUTER VISION</span>
             </div>
           </div>
 
-          {/* Card 2: WALLARM */}
+          {/* Card 2: HERITAGE INSTITUTE */}
           <div className="border border-white/5 bg-[#0c120f]/30 p-6 flex flex-col justify-between min-h-[280px] relative group hover:border-[#00ff88]/20 transition-all duration-300">
             <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#00ff88]/40 group-hover:border-[#00ff88]" />
             <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#00ff88]/40 group-hover:border-[#00ff88]" />
@@ -69,18 +70,19 @@ export default function ClientsSection() {
 
             <div>
               <span className="font-mono text-[9px] text-[#00ff88] uppercase block mb-1">
-                $75M TOTAL FUNDING
+                July 2024 - PRESENT
               </span>
               
               {/* Logo Box */}
               <div className="w-full h-24 flex items-center justify-center bg-black/10 border border-white/[0.02] rounded-lg mb-6 select-none">
                 <div className="flex items-center gap-2">
-                  {/* Stairs/wall Wallarm symbol */}
+                  {/* Classical Arches Heritage symbol */}
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-[#00ff88]">
-                    <path d="M6 22h8v4H6v-4zm6-6h8v4h-8v-4zm6-6h8v4h-8v-4z" fill="currentColor" opacity="0.8" />
+                    <path d="M4 28V12l12-8 12 8v16H4z" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="16" cy="15" r="4" stroke="currentColor" strokeWidth="1.5" />
                   </svg>
-                  <span className="font-display font-black text-xl text-white tracking-tight lowercase">
-                    wallarm
+                  <span className="font-display font-black text-base text-white tracking-tight uppercase">
+                    Heritage Inst
                   </span>
                 </div>
               </div>
@@ -88,13 +90,13 @@ export default function ClientsSection() {
 
             <div>
               <p className="text-[11px] font-mono text-[#a0b0a8] leading-relaxed mb-2">
-                Rebuilt Go event pipeline securing 20,000+ apps and APIs.
+                B.Tech in Computer Science and Engineering. Current YGPA: 9.35. Focused on AI algorithms & smart ledgers.
               </p>
-              <span className="text-[9px] font-mono text-[#00ff88]/50 uppercase tracking-widest block">// CYBERSECURITY</span>
+              <span className="text-[9px] font-mono text-[#00ff88]/50 uppercase tracking-widest block">// EDUCATION</span>
             </div>
           </div>
 
-          {/* Card 3: DAYLIGHT */}
+          {/* Card 3: DIVERSION HACKATHON */}
           <div className="border border-white/5 bg-[#0c120f]/30 p-6 flex flex-col justify-between min-h-[280px] relative group hover:border-[#00ff88]/20 transition-all duration-300">
             <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#00ff88]/40 group-hover:border-[#00ff88]" />
             <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#00ff88]/40 group-hover:border-[#00ff88]" />
@@ -103,22 +105,28 @@ export default function ClientsSection() {
 
             <div>
               <span className="font-mono text-[9px] text-[#00ff88] uppercase block mb-1">
-                $40M TOTAL FUNDING
+                COMPETITION WIN
               </span>
               
               {/* Logo Box */}
               <div className="w-full h-24 flex items-center justify-center bg-black/10 border border-white/[0.02] rounded-lg mb-6 select-none">
-                <span className="font-display font-black text-2xl text-white tracking-tighter uppercase">
-                  daylight
-                </span>
+                <div className="flex items-center gap-3">
+                  {/* Hackathon trophy symbol */}
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-[#00ff88]">
+                    <path d="M6 8h20v8c0 4-4 8-10 8s-10-4-10-8V8zm10 16v6m-6 0h12" stroke="currentColor" strokeWidth="1.8" />
+                  </svg>
+                  <span className="font-display font-black text-lg text-white tracking-tighter uppercase">
+                    Diversion 26
+                  </span>
+                </div>
               </div>
             </div>
 
             <div>
               <p className="text-[11px] font-mono text-[#a0b0a8] leading-relaxed mb-2">
-                Rebuilt 5 core user workflows into a scalable design system.
+                Double Winner at the Diversion 2026 Hackathon, showcasing CUDA, Algorand networks, and AI track achievements.
               </p>
-              <span className="text-[9px] font-mono text-[#00ff88]/50 uppercase tracking-widest block">// CYBERSECURITY</span>
+              <span className="text-[9px] font-mono text-[#00ff88]/50 uppercase tracking-widest block">// AWARDS</span>
             </div>
           </div>
 
@@ -132,12 +140,12 @@ export default function ClientsSection() {
         {/* Section Header */}
         <div className="flex justify-between items-center mb-6 px-1 select-none">
           <span className="font-mono text-xs uppercase tracking-widest text-[#00ff88] font-bold">
-            SERVICES
+            SERVICES & EXPERTISE
           </span>
           <div className="flex items-center gap-4 text-xs font-mono">
             <button className="text-[#a0b0a8]/40 hover:text-[#00ff88] transition-colors">[&lt;]</button>
             <button className="text-[#a0b0a8]/40 hover:text-[#00ff88] transition-colors">[&gt;]</button>
-            <a href="#contact" className="text-[#00ff88] hover:text-white transition-colors">
+            <a href="mailto:Rohitkumardebnath02@gmail.com" className="text-[#00ff88] hover:text-white transition-colors">
               [SEE ALL]
             </a>
           </div>
@@ -146,7 +154,7 @@ export default function ClientsSection() {
         {/* 3-Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          {/* Card 1: Performance & Scale */}
+          {/* Card 1: Vision & AI */}
           <div className="border border-white/5 bg-[#0c120f]/30 p-6 flex flex-col justify-between min-h-[240px] relative group hover:border-[#00ff88]/20 transition-all duration-300">
             <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#00ff88]/40 group-hover:border-[#00ff88]" />
             <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#00ff88]/40 group-hover:border-[#00ff88]" />
@@ -155,16 +163,16 @@ export default function ClientsSection() {
 
             <div>
               <h3 className="font-display font-black text-sm text-[#f4fff8] tracking-wider uppercase mb-3">
-                PERFORMANCE & SCALE
+                VISION & AI ENGINEERING
               </h3>
               <p className="text-[11px] font-mono text-[#a0b0a8] leading-relaxed mb-6">
-                Handle explosive growth without re-architecting: database scaling, background jobs, and the profiling to know where it hurts.
+                Refining YOLO and OpenCV pipelines for body detection and human activity tracking. Integrating ArcFace ReID models and Multimodal AI (VLMs).
               </p>
             </div>
 
             {/* Tags */}
             <div className="flex gap-2">
-              {['Rails', 'Go', 'Rust'].map(tag => (
+              {['OpenCV', 'YOLO', 'ArcFace', 'VLMs'].map(tag => (
                 <span key={tag} className="text-[9px] font-mono px-2 py-0.5 border border-white/5 text-[#a0b0a8]/60 bg-white/[0.005]">
                   {tag}
                 </span>
@@ -172,7 +180,7 @@ export default function ClientsSection() {
             </div>
           </div>
 
-          {/* Card 2: Agent Experience */}
+          {/* Card 2: Full-Stack Systems */}
           <div className="border border-white/5 bg-[#0c120f]/30 p-6 flex flex-col justify-between min-h-[240px] relative group hover:border-[#00ff88]/20 transition-all duration-300">
             <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#00ff88]/40 group-hover:border-[#00ff88]" />
             <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#00ff88]/40 group-hover:border-[#00ff88]" />
@@ -181,16 +189,16 @@ export default function ClientsSection() {
 
             <div>
               <h3 className="font-display font-black text-sm text-[#f4fff8] tracking-wider uppercase mb-3">
-                AGENT EXPERIENCE
+                FRONTEND & FULL-STACK
               </h3>
               <p className="text-[11px] font-mono text-[#a0b0a8] leading-relaxed mb-6">
-                Build Agent Experience for your product: discovery optimization, agent-friendly APIs and CLIs, and security guardrails against abuse.
+                Developing responsive, fast-loading user interfaces and robust web server backends with Next.js, Express.js, Node.js, and Docker environments.
               </p>
             </div>
 
             {/* Tags */}
             <div className="flex gap-2">
-              {['CLI', 'AX', 'MCP'].map(tag => (
+              {['ReactJS', 'NextJS', 'Nodejs', 'Docker'].map(tag => (
                 <span key={tag} className="text-[9px] font-mono px-2 py-0.5 border border-white/5 text-[#a0b0a8]/60 bg-white/[0.005]">
                   {tag}
                 </span>
@@ -198,7 +206,7 @@ export default function ClientsSection() {
             </div>
           </div>
 
-          {/* Card 3: Product Development */}
+          {/* Card 3: Blockchain & DeFi */}
           <div className="border border-white/5 bg-[#0c120f]/30 p-6 flex flex-col justify-between min-h-[240px] relative group hover:border-[#00ff88]/20 transition-all duration-300">
             <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#00ff88]/40 group-hover:border-[#00ff88]" />
             <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#00ff88]/40 group-hover:border-[#00ff88]" />
@@ -207,16 +215,16 @@ export default function ClientsSection() {
 
             <div>
               <h3 className="font-display font-black text-sm text-[#f4fff8] tracking-wider uppercase mb-3">
-                PRODUCT DEVELOPMENT
+                WEB3 & LEDGER SYSTEMS
               </h3>
               <p className="text-[11px] font-mono text-[#a0b0a8] leading-relaxed mb-6">
-                Forward-deployed engineers who ship your product from PoC to PMF: embedded in your repo, your stack, your cadence.
+                Developing smart contracts, tokenizing fractional assets on decentralized finance ledgers, and building secure platforms on Solidity and Algorand.
               </p>
             </div>
 
             {/* Tags */}
             <div className="flex gap-2">
-              {['Rails', 'TypeScript', 'Go'].map(tag => (
+              {['Solidity', 'Hardhat', 'Algorand', 'CUDA'].map(tag => (
                 <span key={tag} className="text-[9px] font-mono px-2 py-0.5 border border-white/5 text-[#a0b0a8]/60 bg-white/[0.005]">
                   {tag}
                 </span>
