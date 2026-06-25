@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
+import Magnetic from '@/components/Magnetic'
 
 const navLinks = [
   { label: 'Work', href: '#work' },
@@ -37,33 +38,39 @@ export default function Header() {
       >
         <div className="container-custom flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group relative z-50">
-            <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-[#00ff88] transition-colors duration-300">
-              CREATIVE<span className="text-[#00ff88]">.</span>
-            </span>
-          </a>
+          <Magnetic range={30} strength={0.25}>
+            <a href="#" className="flex items-center gap-2 group relative z-50 py-2">
+              <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-[#00ff88] transition-colors duration-300">
+                CREATIVE<span className="text-[#00ff88]">.</span>
+              </span>
+            </a>
+          </Magnetic>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-10">
-            <ul className="flex items-center gap-8">
+            <ul className="flex items-center gap-6">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 nav-link-anim relative py-1"
-                  >
-                    {link.label}
-                  </a>
+                  <Magnetic range={40} strength={0.3}>
+                    <a
+                      href={link.href}
+                      className="text-sm font-medium text-white/70 hover:text-white transition-colors duration-300 nav-link-anim relative py-2 px-3 block"
+                    >
+                      {link.label}
+                    </a>
+                  </Magnetic>
                 </li>
               ))}
             </ul>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full hover:border-[#00ff88]/50 hover:bg-[#00ff88]/5 text-sm font-medium text-white transition-all duration-300 hover:scale-105"
-            >
-              Let's talk
-              <ArrowUpRight className="w-4 h-4 text-[#00ff88]" />
-            </a>
+            <Magnetic range={50} strength={0.35}>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full hover:border-[#00ff88]/50 hover:bg-[#00ff88]/5 text-sm font-medium text-white transition-all duration-300 hover:scale-105"
+              >
+                Let's talk
+                <ArrowUpRight className="w-4 h-4 text-[#00ff88]" />
+              </a>
+            </Magnetic>
           </nav>
 
           {/* Mobile Menu Toggle */}

@@ -1,7 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Code, Sparkles, MoveRight } from 'lucide-react'
+import { ArrowDown, Sparkles, MoveRight } from 'lucide-react'
+import Magnetic from '@/components/Magnetic'
+import AnimatedText from '@/components/AnimatedText'
 
 export default function Hero() {
   const containerVariants = {
@@ -9,8 +11,8 @@ export default function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3,
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
       },
     },
   }
@@ -22,18 +24,6 @@ export default function Hero() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.16, 1, 0.3, 1], // easeOutExpo
-      },
-    },
-  }
-
-  const titleWordVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
         ease: [0.16, 1, 0.3, 1],
       },
     },
@@ -75,23 +65,22 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* Heading */}
-          <div className="mb-8 overflow-hidden">
-            <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] text-white">
-              <motion.div variants={titleWordVariants} className="block">
-                CRAFTING
-              </motion.div>
-              <motion.div 
-                variants={titleWordVariants} 
-                className="block text-gradient mt-1"
-              >
-                DIGITAL SHAPES
-              </motion.div>
-              <motion.div variants={titleWordVariants} className="block text-white flex items-center gap-4 flex-wrap">
-                FOR BRANDS<span className="text-[#00ff88]">.</span>
-              </motion.div>
-            </h1>
-          </div>
+          {/* Heading with split animated text */}
+          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] text-white mb-8">
+            <span className="block overflow-hidden">
+              <AnimatedText text="CRAFTING" delay={0.2} />
+            </span>
+            <span className="block overflow-hidden">
+              <AnimatedText 
+                text="DIGITAL SHAPES" 
+                className="text-gradient" 
+                delay={0.4} 
+              />
+            </span>
+            <span className="block overflow-hidden">
+              <AnimatedText text="FOR BRANDS." delay={0.6} />
+            </span>
+          </h1>
 
           {/* Subheading */}
           <motion.p
@@ -107,20 +96,24 @@ export default function Hero() {
             variants={childVariants}
             className="flex flex-wrap gap-5 items-center"
           >
-            <a
-              href="#work"
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#00ff88] text-black font-semibold rounded-full hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_4px_20px_rgba(0,255,136,0.25)] hover:shadow-none"
-            >
-              Explore Work
-              <MoveRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
-            </a>
+            <Magnetic range={50} strength={0.3}>
+              <a
+                href="#work"
+                className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#00ff88] text-black font-semibold rounded-full hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_4px_20px_rgba(0,255,136,0.25)] hover:shadow-none"
+              >
+                Explore Work
+                <MoveRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
+              </a>
+            </Magnetic>
             
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center px-8 py-4 border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-white font-medium rounded-full transition-all duration-300 hover:scale-105"
-            >
-              Let's Talk
-            </a>
+            <Magnetic range={40} strength={0.3}>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center px-8 py-4 border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-white font-medium rounded-full transition-all duration-300 hover:scale-105"
+              >
+                Let's Talk
+              </a>
+            </Magnetic>
           </motion.div>
         </motion.div>
       </div>
@@ -130,13 +123,15 @@ export default function Hero() {
         <span className="font-mono text-[10px] tracking-[0.2em] text-[#8f94a6]/50 uppercase vertical-text select-none">
           SCROLL DOWN
         </span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-          className="p-2 border border-white/10 rounded-full text-white/50"
-        >
-          <ArrowDown className="w-4 h-4 text-[#00ff88]" />
-        </motion.div>
+        <Magnetic range={30} strength={0.4}>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+            className="p-2 border border-white/10 rounded-full text-white/50 cursor-pointer"
+          >
+            <ArrowDown className="w-4 h-4 text-[#00ff88]" />
+          </motion.div>
+        </Magnetic>
       </div>
       
       <style jsx global>{`
