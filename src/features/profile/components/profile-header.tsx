@@ -20,37 +20,42 @@ export function ProfileHeader() {
           />
         </div>
 
-        <SimpleTooltip content="I'm from Pakistan">
-          {/* Flag of Pakistan */}
+        <SimpleTooltip content="I'm from India">
+          {/* Flag of India */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="absolute top-0 -left-px h-8 sm:h-9"
-            shapeRendering="geometricPrecision"
-            textRendering="geometricPrecision"
-            imageRendering="optimizeQuality"
-            fillRule="evenodd"
-            clipRule="evenodd"
-            viewBox="0 0 513 357.071"
+            viewBox="0 0 900 600"
           >
-            <rect width="513" height="357.071" fill="#fff" />
-
-            <rect x="122.835" width="390.165" height="357.071" fill="#01411C" />
-
-            <path
-              fill="#fff"
-              fillRule="nonzero"
-              d="M290.758 76.663C247.631 90.44 216.4 130.838 216.4 178.534c0 59.057 47.875 106.931 106.931 106.931 43.252 0 80.504-25.681 97.345-62.626a98.756 98.756 0 01-4.89 4.661c-40.459 35.966-102.416 32.322-138.381-8.138s-32.32-102.417 8.139-138.382a99.87 99.87 0 015.214-4.317zm71.563 21.855l45.044 50.672-66.225-14.516 62.11-27.179-34.273 58.495-6.656-67.472z"
-            />
-
+            <rect width="900" height="200" fill="#f93" />
+            <rect y="200" width="900" height="200" fill="#fff" />
+            <rect y="400" width="900" height="200" fill="#128807" />
+            <g transform="translate(450,300)">
+              <circle r="80" fill="none" stroke="#000088" strokeWidth="10" />
+              <circle r="15" fill="#000088" />
+              <g stroke="#000088" strokeWidth="4">
+                <line y1="-80" y2="80" />
+                <line x1="-80" x2="80" />
+                <line x1="-56.57" y1="-56.57" x2="56.57" y2="56.57" />
+                <line x1="-56.57" y1="56.57" x2="56.57" y2="-56.57" />
+                <line x1="-30.6" y1="-73.9" x2="30.6" y2="73.9" />
+                <line x1="-73.9" y1="-30.6" x2="73.9" y2="30.6" />
+                <line x1="-73.9" y1="30.6" x2="73.9" y2="-30.6" />
+                <line x1="-30.6" y1="73.9" x2="30.6" y2="-73.9" />
+                <line x1="-20.7" y1="-77.2" x2="20.7" y2="77.2" />
+                <line x1="-77.2" y1="-20.7" x2="77.2" y2="20.7" />
+                <line x1="-77.2" y1="20.7" x2="77.2" y2="-20.7" />
+                <line x1="-20.7" y1="77.2" x2="20.7" y2="-77.2" />
+              </g>
+            </g>
             <rect
               fill="none"
               stroke="#CCC"
-              strokeWidth=".64"
-              strokeMiterlimit="22.926"
-              x=".32"
-              y=".319"
-              width="512.359"
-              height="356.43"
+              strokeWidth="1"
+              x="0"
+              y="0"
+              width="900"
+              height="600"
             />
           </svg>
         </SimpleTooltip>
