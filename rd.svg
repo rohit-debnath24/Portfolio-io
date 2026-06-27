@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="223.2pt" height="110.88pt" viewBox="0 0 223.2 110.88" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-06-28T02:11:10.963379</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 110.88 
+L 223.2 110.88 
+L 223.2 0 
+L 0 0 
+L 0 110.88 
+z
+" style="fill: none"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <!-- rd -->
+    <g transform="translate(80.045312 73.244687) scale(1 -1)">
+     <defs>
+      <path id="GreatVibes-Regular-72" d="M 384 1254 
+Q 435 1363 518 1603 
+Q 602 1843 691 2137 
+Q 781 2432 826 2694 
+Q 845 2797 896 2845 
+Q 947 2893 1005 2893 
+Q 1088 2893 1158 2813 
+Q 1229 2733 1229 2586 
+Q 1229 2406 1123 2278 
+Q 1018 2150 864 2035 
+Q 928 2029 998 2025 
+Q 1069 2022 1152 2022 
+Q 1453 2022 1747 2061 
+Q 1760 2022 1760 2003 
+Q 1760 1920 1712 1792 
+Q 1664 1664 1613 1562 
+Q 1587 1504 1510 1353 
+Q 1434 1203 1344 1014 
+Q 1254 826 1193 643 
+Q 1133 461 1133 333 
+Q 1133 166 1261 166 
+Q 1382 166 1600 451 
+Q 1818 736 2035 1235 
+Q 2112 1235 2112 1178 
+Q 2042 1005 1936 800 
+Q 1830 595 1702 412 
+Q 1574 230 1427 112 
+Q 1280 -6 1120 -6 
+Q 998 -6 876 93 
+Q 755 192 755 416 
+Q 755 614 832 803 
+Q 909 992 1005 1158 
+Q 1101 1325 1177 1453 
+Q 1254 1581 1254 1658 
+Q 1254 1773 1110 1824 
+Q 966 1875 736 1882 
+Q 621 1587 563 1446 
+Q 506 1306 454 1178 
+Q 352 1178 384 1254 
+z
+" transform="scale(0.015625)"/>
+      <path id="GreatVibes-Regular-64" d="M 1843 0 
+Q 1626 0 1523 147 
+Q 1421 294 1421 493 
+Q 1421 550 1427 611 
+Q 1434 672 1453 736 
+Q 1363 595 1244 425 
+Q 1126 256 976 131 
+Q 826 6 640 6 
+Q 557 6 451 44 
+Q 346 83 266 192 
+Q 186 301 186 512 
+Q 186 787 307 1094 
+Q 429 1402 640 1674 
+Q 851 1946 1120 2115 
+Q 1389 2285 1677 2285 
+Q 1907 2285 2112 2163 
+Q 2208 2342 2317 2563 
+Q 2426 2784 2534 3001 
+Q 2643 3219 2726 3401 
+Q 2810 3584 2854 3680 
+Q 2950 3904 3036 3965 
+Q 3123 4026 3245 4026 
+Q 3315 4026 3401 4010 
+Q 3488 3994 3571 4000 
+Q 3539 3968 3424 3789 
+Q 3309 3610 3142 3325 
+Q 2976 3040 2787 2701 
+Q 2598 2362 2416 2006 
+Q 2234 1651 2080 1324 
+Q 1926 998 1836 748 
+Q 1747 499 1747 371 
+Q 1747 288 1785 227 
+Q 1824 166 1914 166 
+Q 2035 166 2163 288 
+Q 2291 410 2409 592 
+Q 2528 774 2621 950 
+Q 2714 1126 2758 1235 
+Q 2835 1235 2835 1178 
+Q 2778 1043 2682 844 
+Q 2586 646 2458 454 
+Q 2330 262 2173 131 
+Q 2016 0 1843 0 
+z
+M 685 192 
+Q 774 192 908 291 
+Q 1043 390 1197 608 
+Q 1376 864 1606 1248 
+Q 1837 1632 2061 2061 
+Q 2016 2099 1965 2118 
+Q 1914 2138 1824 2138 
+Q 1677 2138 1501 2013 
+Q 1325 1888 1149 1689 
+Q 973 1491 829 1260 
+Q 685 1030 598 816 
+Q 512 602 512 448 
+Q 512 192 685 192 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#GreatVibes-Regular-72"/>
+     <use xlink:href="#GreatVibes-Regular-64" transform="translate(25.899994 0)"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

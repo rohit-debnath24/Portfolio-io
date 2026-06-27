@@ -3,7 +3,6 @@ import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 
 import { About } from "@/features/profile/components/about";
 import { Awards } from "@/features/profile/components/awards";
-import { Blog } from "@/features/profile/components/blog";
 import { Brand } from "@/features/profile/components/brand";
 import { Certifications } from "@/features/profile/components/certifications";
 import { Experiences } from "@/features/profile/components/experiences";
@@ -12,6 +11,7 @@ import { Overview } from "@/features/profile/components/overview";
 import { ProfileCover } from "@/features/profile/components/profile-cover";
 import { ProfileHeader } from "@/features/profile/components/profile-header";
 import { Projects } from "@/features/profile/components/projects";
+import { ProjectsGallery } from "@/features/profile/components/projects-gallery";
 import { SocialLinks } from "@/features/profile/components/social-links";
 import { TeckStack } from "@/features/profile/components/teck-stack";
 import { TestimonialsMarquee } from "@/features/profile/components/testimonials-marquee";
@@ -51,7 +51,7 @@ export default function Page() {
         <TeckStack />
         <Separator />
 
-        <Blog />
+        <ProjectsGallery />
         <Separator />
 
         <Experiences />

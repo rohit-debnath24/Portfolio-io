@@ -14,6 +14,14 @@ export function Certifications() {
             ({CERTIFICATIONS.length})
           </sup>
         </PanelTitle>
+        <a
+          href="https://www.credly.com/users/rohit-kumar-debnath/badges/credly"
+          target="_blank"
+          rel="noopener"
+          className="ml-auto flex items-center text-xs font-semibold text-primary hover:underline"
+        >
+          View More &rarr;
+        </a>
       </PanelHeader>
 
       <CollapsibleList

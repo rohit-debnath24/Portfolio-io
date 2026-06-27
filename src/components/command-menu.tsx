@@ -37,9 +37,9 @@ import { useSound } from "@/hooks/use-sound";
 import { cn } from "@/lib/utils";
 import { copyText } from "@/utils/copy";
 
-import { AbdulRehmanMark, getMarkSVG } from "./abdulrehman-mark";
-import { getWordmarkSVG } from "./abdulrehman-wordmark";
 import { Icons } from "./icons";
+import { getMarkSVG, RohitDebnathMark } from "./rohitdebnath-mark";
+import { getWordmarkSVG } from "./rohitdebnath-wordmark";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 
@@ -57,7 +57,7 @@ const MENU_LINKS: CommandLinkItem[] = [
   {
     title: "Portfolio",
     href: "/",
-    icon: AbdulRehmanMark,
+    icon: RohitDebnathMark,
   },
   {
     title: "Blog",
@@ -97,7 +97,7 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
     icon: BriefcaseBusinessIcon,
   },
   {
-    title: "Projects",
+    title: "Project Descriptions ",
     href: "/#projects",
     icon: Icons.project,
   },
@@ -314,7 +314,7 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
                 );
               }}
             >
-              <AbdulRehmanMark />
+              <RohitDebnathMark />
               Copy Mark as SVG
             </CommandItem>
 
@@ -475,7 +475,10 @@ function CommandMenuFooter() {
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 border-t bg-zinc-100/30 px-4 text-xs font-medium dark:bg-zinc-800/30">
-        <AbdulRehmanMark className="size-6 text-muted-foreground" aria-hidden />
+        <RohitDebnathMark
+          className="size-6 text-muted-foreground"
+          aria-hidden
+        />
 
         <div className="flex shrink-0 items-center gap-2">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>

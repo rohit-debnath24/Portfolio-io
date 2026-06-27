@@ -15,7 +15,7 @@ export const USER: User = {
     "Computer Vision Developer",
   ],
   address: "Kolkata, WB, India",
-  phoneNumber: "KzkxODA5NDcyOTI0Mg==", // +918094729242
+  phoneNumber: "8637065289", //
   secondPhoneNumber: "",
   email: "Um9oaXRrdW1hcmRlYm5hdGgwMkBnbWFpbC5jb20=", // Rohitkumardebnath02@gmail.com
   website: "https://github.com/rohit-debnath24",

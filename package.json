@@ -2,23 +2,23 @@
   "name": "my-portfolio",
   "version": "0.1.0",
   "description": "A minimal, pixel-perfect developer portfolio, blog and products.",
-  "homepage": "https://abdulrehmanwaseem.me",
+  "homepage": "https://rohitdebnathwaseem.me",
   "license": "MIT",
   "author": {
     "name": "Abdul Rehman",
-    "email": "contact@abdulrehmanwaseem.me",
-    "url": "https://github.com/abdulrehmanwaseem"
+    "email": "contact@rohitdebnathwaseem.me",
+    "url": "https://github.com/rohitdebnathwaseem"
   },
   "contributors": [
     {
       "name": "Abdul Rehman",
-      "email": "contact@abdulrehmanwaseem.me",
-      "url": "https://github.com/abdulrehmanwaseem"
+      "email": "contact@rohitdebnathwaseem.me",
+      "url": "https://github.com/rohitdebnathwaseem"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abdulrehmanwaseem/My-Portfolio.git"
+    "url": "git+https://github.com/rohitdebnathwaseem/My-Portfolio.git"
   },
   "scripts": {
     "dev": "next dev -p 1408",

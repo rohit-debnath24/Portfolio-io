@@ -17,7 +17,7 @@ export async function NavItemGitHub() {
       </TooltipTrigger>
 
       <TooltipContent>
-        <p>Coding since 14y/o</p>
+        <p>Coding since 2k24</p>
       </TooltipContent>
     </Tooltip>
   );

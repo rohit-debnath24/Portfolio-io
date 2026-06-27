@@ -16,7 +16,7 @@ export function SiteFooter() {
           Built by a {""}
           {/* <a
             className="link"
-            href="https://www.linkedin.com/in/abdulrehmanwaseem"
+            href="https://www.linkedin.com/in/rohitdebnathwaseem"
             target="_blank"
             rel="noopener"
           >

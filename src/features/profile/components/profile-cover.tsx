@@ -1,6 +1,7 @@
-import { AbdulRehmanMark } from "@/components/abdulrehman-mark";
 import { BrandContextMenu } from "@/components/brand-context-menu";
 import { cn } from "@/lib/utils";
+
+import { MorphingText } from "./MorphingText";
 
 export function ProfileCover() {
   return (
@@ -13,10 +14,12 @@ export function ProfileCover() {
           "bg-black/0.75 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center [--pattern-foreground:var(--color-zinc-950)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5"
         )}
       >
-        <AbdulRehmanMark
+        <div
           id="js-cover-mark"
-          className="h-14 w-28 sm:h-16 sm:w-32"
-        />
+          className="flex w-full items-center justify-center"
+        >
+          <MorphingText texts={["Hola", "Bonjour", "Ciao", "こんにちは"]} />
+        </div>
       </div>
     </BrandContextMenu>
   );

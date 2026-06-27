@@ -9,7 +9,7 @@ export function Projects() {
     <Panel id="projects">
       <PanelHeader>
         <PanelTitle>
-          Projects
+          Project Descriptions
           <sup className="ml-1 font-mono text-sm text-muted-foreground select-none">
             ({PROJECTS.length})
           </sup>

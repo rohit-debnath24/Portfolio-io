@@ -49,11 +49,11 @@ export const metadata: Metadata = {
   keywords: SITE_INFO.keywords,
   authors: [
     {
-      name: "abdulrehman",
+      name: "rohitdebnath",
       url: SITE_INFO.url,
     },
   ],
-  creator: "abdulrehman",
+  creator: "rohitdebnath",
   openGraph: {
     siteName: SITE_INFO.name,
     url: "/",
@@ -73,35 +73,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    creator: "@abdulrehman_code", // Twitter username
+    creator: "@rohitdebnath_code", // Twitter username
     images: [SITE_INFO.ogImage],
-  },
-  icons: {
-    icon: [
-      {
-        url: "/favicon.ico",
-        sizes: "any",
-      },
-      {
-        url: "/images/brand/favicon.ico",
-        sizes: "any",
-      },
-      {
-        url: "/images/brand/favicon.svg",
-        type: "image/svg+xml",
-      },
-      {
-        url: "/images/brand/apple-touch-icon.png",
-        type: "image/png",
-        sizes: "180x180",
-      },
-    ],
-    apple: {
-      url: "/images/brand/apple-touch-icon.png",
-      type: "image/png",
-      sizes: "180x180",
-    },
-    shortcut: "/favicon.ico",
   },
 };
 
