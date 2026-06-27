@@ -18,7 +18,7 @@ export const USER: User = {
   phoneNumber: "KzkxODA5NDcyOTI0Mg==", // +918094729242
   secondPhoneNumber: "",
   email: "Um9oaXRrdW1hcmRlYm5hdGgwMkBnbWFpbC5jb20=", // Rohitkumardebnath02@gmail.com
-  website: "https://github.com/rohitkumardebnath",
+  website: "https://github.com/rohit-debnath24",
   jobTitle: "SDE Intern",
   jobs: [
     {

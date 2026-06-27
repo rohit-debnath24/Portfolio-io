@@ -10,7 +10,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     icon: "https://assets.chanhdai.com/images/link-icons/github.webp?t=1759581475",
     title: "GitHub",
-    description: "@rohitkumardebnath",
-    href: "https://github.com/rohitkumardebnath",
+    description: "@rohit-debnath24",
+    href: "https://github.com/rohit-debnath24",
   },
 ];
