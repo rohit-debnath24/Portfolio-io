@@ -1,4 +1,4 @@
-# [rohitdebnathwaseem](https://rohitdebnathwaseem.me)
+# [rohitdebnath](https://rohit-debnath.vercel.app/)
 
 A minimal, pixel-perfect dev portfolio, blog and products to showcase my work as a Fullstack developer.
 
