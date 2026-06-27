@@ -1,76 +1,149 @@
-import type { Metadata, Viewport } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
-import './globals.css'
-import CustomCursor from '@/components/CustomCursor'
-import GridOverlay from '@/components/GridOverlay'
+import "@/styles/globals.css";
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
+import type { Metadata, Viewport } from "next";
+import Script from "next/script";
+import type { WebSite, WithContext } from "schema-dts";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-display',
-  display: 'swap',
-})
+import { Providers } from "@/components/providers";
+import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
+import { USER } from "@/features/profile/data/user";
+import { fontMono, fontSans } from "@/lib/fonts";
+
+function getWebSiteJsonLd(): WithContext<WebSite> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_INFO.name,
+    url: SITE_INFO.url,
+    alternateName: [USER.username],
+  };
+}
+
+// Trigger commit
+
+// Thanks @shadcn-ui, @tailwindcss
+const darkModeScript = String.raw`
+  try {
+    if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '${META_THEME_COLORS.dark}')
+    }
+  } catch (_) {}
+
+  try {
+    if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+      document.documentElement.classList.add('os-macos')
+    }
+  } catch (_) {}
+`;
 
 export const metadata: Metadata = {
-  title: 'Martian Developer | Creative Full-Stack Engineer & Designer',
-  description: 'Product development and creative frontend engineering showcasing interactive retro-futuristic interfaces and custom systems.',
-  keywords: ['developer', 'designer', 'portfolio', 'full-stack', 'React', 'Next.js', 'TypeScript', 'Evil Martians', 'Creative Coding', 'WebGL'],
-  authors: [{ name: 'Your Name' }],
-  creator: 'Your Name',
-  publisher: 'Your Name',
-  robots: 'index, follow',
+  metadataBase: new URL(SITE_INFO.url),
+  alternates: {
+    canonical: "/",
+  },
+  title: {
+    template: `%s – ${SITE_INFO.name}`,
+    default: `${USER.displayName} – ${USER.jobTitle}`,
+  },
+  description: SITE_INFO.description,
+  keywords: SITE_INFO.keywords,
+  authors: [
+    {
+      name: "abdulrehman",
+      url: SITE_INFO.url,
+    },
+  ],
+  creator: "abdulrehman",
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://yourdomain.com',
-    siteName: 'Martian Portfolio',
-    title: 'Martian Developer | Creative Full-Stack Engineer & Designer',
-    description: 'Immersive digital products, strategy-led UI/UX designs, and clean custom code.',
+    siteName: SITE_INFO.name,
+    url: "/",
+    type: "profile",
+    firstName: USER.firstName,
+    lastName: USER.lastName,
+    username: USER.username,
+    gender: USER.gender,
     images: [
       {
-        url: '/og-image.jpg',
+        url: SITE_INFO.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Portfolio',
+        alt: SITE_INFO.name,
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Martian Developer | Creative Full-Stack Engineer & Designer',
-    description: 'Immersive digital products, strategy-led UI/UX designs, and clean custom code.',
-    images: ['/og-image.jpg'],
+    card: "summary_large_image",
+    creator: "@abdulrehman_code", // Twitter username
+    images: [SITE_INFO.ogImage],
   },
-}
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/images/brand/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/images/brand/favicon.svg",
+        type: "image/svg+xml",
+      },
+      {
+        url: "/images/brand/apple-touch-icon.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
+    apple: {
+      url: "/images/brand/apple-touch-icon.png",
+      type: "image/png",
+      sizes: "180x180",
+    },
+    shortcut: "/favicon.ico",
+  },
+};
 
 export const viewport: Viewport = {
-  themeColor: '#040806',
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
-  maximumScale: 5,
-}
+  viewportFit: "cover",
+  themeColor: META_THEME_COLORS.light,
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} custom-cursor-active`}>
+    <html
+      lang="en"
+      className={`${fontSans.variable} ${fontMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{ __html: darkModeScript }}
+        />
+        {/*
+          Thanks @tailwindcss. We inject the script via the `<Script/>` tag again,
+          since we found the regular `<script>` tag to not execute when rendering a not-found page.
+         */}
+        <Script src={`data:text/javascript;base64,${btoa(darkModeScript)}`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getWebSiteJsonLd()).replace(/</g, "\\u003c"),
+          }}
+        />
       </head>
-      <body className="min-h-screen flex flex-col text-[#f4fff8] selection:bg-[#00ff88] selection:text-black antialiased relative">
-        <GridOverlay />
-        <CustomCursor />
-        {children}
+
+      <body suppressHydrationWarning>
+        <Providers>{children}</Providers>
       </body>
     </html>
-  )
+  );
 }
