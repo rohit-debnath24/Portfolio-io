@@ -60,8 +60,8 @@ const MENU_LINKS: CommandLinkItem[] = [
     icon: RohitDebnathMark,
   },
   {
-    title: "Blog",
-    href: "/blog",
+    title: "Projects",
+    href: "/projects",
     icon: RssIcon,
   },
   {
