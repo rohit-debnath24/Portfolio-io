@@ -16,6 +16,7 @@ export const USER: User = {
   ],
   address: "Kolkata, WB, India",
   phoneNumber: "KzkxODA5NDcyOTI0Mg==", // +918094729242
+  secondPhoneNumber: "",
   email: "Um9oaXRrdW1hcmRlYm5hdGgwMkBnbWFpbC5jb20=", // Rohitkumardebnath02@gmail.com
   website: "https://github.com/rohitkumardebnath",
   jobTitle: "SDE Intern",
@@ -23,7 +24,8 @@ export const USER: User = {
     {
       title: "SDE Intern",
       company: "Hive Dynamics",
-    }
+      website: "https://hivedynamics.ai",
+    },
   ],
   about: `
 - Currently pursuing **B.Tech in Computer Science and Engineering** at **Heritage Institute Of Technology** with a YGPA of 9.35.
