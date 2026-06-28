@@ -64,20 +64,6 @@ const MENU_LINKS: CommandLinkItem[] = [
     href: "/projects",
     icon: RssIcon,
   },
-  {
-    title: "Products",
-    href: "/products",
-    icon: Icons.react,
-  },
-];
-
-const PRODUCT_LINKS: CommandLinkItem[] = [
-  {
-    title: "ShopFlow",
-    href: "/products/shopflow",
-    icon: Icons.react,
-    keywords: ["shop", "management", "pos", "pern", "inventory"],
-  },
 ];
 
 const PORTFOLIO_LINKS: CommandLinkItem[] = [
@@ -117,8 +103,8 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
     icon: MessageCircleMoreIcon,
   },
   {
-    title: "Download vCard",
-    href: "/vcard",
+    title: "Download Resume",
+    href: "/resume.pdf",
     icon: CircleUserIcon,
   },
 ];
@@ -201,11 +187,8 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
     [playClick, setTheme]
   );
 
-  const { blogLinks, componentLinks } = useMemo(
+  const { componentLinks } = useMemo(
     () => ({
-      blogLinks: posts
-        .filter((post) => post.metadata?.category !== "components")
-        .map(postToCommandLinkItem),
       componentLinks: posts
         .filter((post) => post.metadata?.category === "components")
         .map(postToCommandLinkItem),
@@ -270,26 +253,10 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
 
           <CommandSeparator />
 
-          <CommandLinkGroup
-            heading="Blog"
-            links={blogLinks}
-            fallbackIcon={TextIcon}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandSeparator />
-
-          {hasComponents ? (
+          {hasComponents && (
             <CommandLinkGroup
               heading="Components"
               links={componentLinks}
-              fallbackIcon={Icons.react}
-              onLinkSelect={handleOpenLink}
-            />
-          ) : (
-            <CommandLinkGroup
-              heading="Products"
-              links={PRODUCT_LINKS}
               fallbackIcon={Icons.react}
               onLinkSelect={handleOpenLink}
             />
@@ -302,48 +269,6 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
             links={SOCIAL_LINK_ITEMS}
             onLinkSelect={handleOpenLink}
           />
-
-          <CommandSeparator />
-
-          <CommandGroup heading="Brand Assets">
-            <CommandItem
-              onSelect={() => {
-                handleCopyText(
-                  getMarkSVG(resolvedTheme === "light" ? "#000" : "#fff"),
-                  "Copied Mark as SVG"
-                );
-              }}
-            >
-              <RohitDebnathMark />
-              Copy Mark as SVG
-            </CommandItem>
-
-            <CommandItem
-              onSelect={() => {
-                handleCopyText(
-                  getWordmarkSVG(resolvedTheme === "light" ? "#000" : "#fff"),
-                  "Copied Logotype as SVG"
-                );
-              }}
-            >
-              <TypeIcon />
-              Copy Logotype as SVG
-            </CommandItem>
-
-            <CommandItem
-              onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
-            >
-              <TriangleDashedIcon />
-              Brand Guidelines
-            </CommandItem>
-
-            <CommandItem asChild>
-              <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
-                <DownloadIcon />
-                Download Brand Assets
-              </a>
-            </CommandItem>
-          </CommandGroup>
 
           <CommandSeparator />
 
@@ -432,21 +357,11 @@ type CommandMetaMap = Map<
 function buildCommandMetaMap() {
   const commandMetaMap: CommandMetaMap = new Map();
 
-  commandMetaMap.set("Download vCard", { commandKind: "command" });
+  commandMetaMap.set("Download Resume", { commandKind: "command" });
 
   commandMetaMap.set("Light", { commandKind: "command" });
   commandMetaMap.set("Dark", { commandKind: "command" });
   commandMetaMap.set("Auto", { commandKind: "command" });
-
-  commandMetaMap.set("Copy Mark as SVG", {
-    commandKind: "command",
-  });
-  commandMetaMap.set("Copy Logotype as SVG", {
-    commandKind: "command",
-  });
-  commandMetaMap.set("Download Brand Assets", {
-    commandKind: "command",
-  });
 
   SOCIAL_LINK_ITEMS.forEach((item) => {
     commandMetaMap.set(item.title, {
